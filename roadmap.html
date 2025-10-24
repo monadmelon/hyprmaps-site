@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Roadmap - HyprMaps</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">HyprMaps</a>
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav-links">
+                <a href="/roadmap.html">Roadmap</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                    <div class="theme-toggle-slider">
+                        <span class="theme-icon">🌙</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Development Roadmap</h1>
+            <p class="subtitle">Building transparently. Every milestone documented.</p>
+            <p class="subtitle"><strong>Started:</strong> October 2025</p>
+        </div>
+
+        <div class="status-badge">
+            <strong>Current Phase: MVP Development</strong>
+            <p>Building Varkala pilot with core mapping and categorization features</p>
+            <p>Updated: Oct 23, 2025</p>
+        </div>
+
+        <div class="phase">
+            <h2>Phase 1: MVP - Varkala Pilot</h2> 
+            <p class="phase-meta">Timeline: October-November 2025</p>
+
+            <div class="week-block">
+                <div class="week-header">
+                    <div class="week-title">Weeks 1-2: Foundation</div>
+                    <div class="week-status status-progress">IN PROGRESS</div> 
+                </div>
+                <ul class="checklist">
+                    <li>Data collection and verification pipeline</li>
+                    <li>Spatial database architecture</li>
+                    <li>Core API development</li>
+                    <li class="progress">Website and brand identity</li>
+                </ul>
+            </div>
+
+            <div class="week-block">
+                <div class="week-header">
+                    <div class="week-title">Week 3: Interactive Mapping</div>
+                    <div class="week-status status-planned">PLANNED</div>
+                </div>
+                <ul class="checklist">
+                    <li class="pending">Map integration with spatial search</li>
+                    <li class="pending">Display verified locations</li>
+                    <li class="pending">Category-based filtering system</li>
+                    <li class="pending">Mobile-responsive interface</li>
+                </ul>
+            </div>
+
+            <div class="week-block">
+                <div class="week-header">
+                    <div class="week-title">Week 4: Launch</div>
+                    <div class="week-status status-planned">PLANNED</div>
+                </div>
+                <ul class="checklist">
+                    <li class="pending">9-category system preview</li>
+                    <li class="pending">Progressive web app capabilities</li>
+                    <li class="pending">Business dashboard (basic analytics)</li>
+                    <li class="pending">Public launch and community feedback</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="phase">
+            <h2>Phase 2: Validation & Traction</h2>
+            <p class="phase-meta">Timeline: November-December 2025</p>
+            <ul class="checklist">
+                <li class="pending">Expand verified point-of-interest coverage</li>
+                <li class="pending">Onboard local businesses to platform</li>
+                <li class="pending">Collect business and tourist testimonials</li>
+                <li class="pending">Build tourism board pitch with live metrics</li>
+                <li class="pending">Demonstrate platform value with real usage data</li>
+            </ul>
+        </div>
+
+        <div class="phase">
+            <h2>Phase 3: Enterprise Platform</h2>
+            <p class="phase-meta">Timeline: Q1 2026</p>
+            <ul class="checklist">
+                <li class="pending">Multi-tenant white-label architecture</li>
+                <li class="pending">Tourism board administration dashboard</li>
+                <li class="pending">Business self-service portal</li>
+                <li class="pending">Content moderation workflows</li>
+                <li class="pending">Multi-city deployment capabilities</li>
+            </ul>
+        </div>
+
+        <div class="phase">
+            <h2>Phase 4: Scale</h2>
+            <p class="phase-meta">Timeline: Q2 2026+</p>
+            <ul class="checklist">
+                <li class="pending">Multi-destination deployments</li>
+                <li class="pending">International language support</li>
+                <li class="pending">Native mobile applications</li> 
+                <li class="pending">Advanced analytics and reporting</li>
+                <li class="pending">API ecosystem for third-party integrations</li>
+            </ul>
+        </div>
+
+        <div class="update-log">
+            <h3>Recent Progress</h3>
+            <p class="update-meta">Week 2 - October 23, 2025</p>
+
+            <div class="update-section">
+                <h4>Completed This Week</h4>
+                <ul>
+                    <li>Launched hyprmaps.com with public roadmap</li>
+                    <li>Platform architecture finalized</li>
+                    <li>Business model validated with stakeholders</li>
+                    <li>Database design in progress</li>
+                </ul>
+            </div>
+
+            <div class="update-section">
+                <h4>Next Week Focus</h4>
+                <ul>
+                    <li>Complete backend infrastructure</li>
+                    <li>Begin frontend development</li>
+                    <li>Start business verification outreach</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tech-stack">
+            <h2>Technology Approach</h2>
+            <p>
+                Built on proven open-source infrastructure. Modern, scalable, no vendor lock-in.
+            </p>
+            
+            <div class="tech-item">
+                <strong>Architecture</strong>
+                <p>Progressive web application with offline-first capabilities. Real-time data synchronization. Mobile-responsive design optimized for tourist usage patterns.</p>
+            </div>
+
+            <div class="tech-item">
+                <strong>Infrastructure</strong>
+                <p>Cloud-native deployment with global content delivery. Spatial database optimized for geographic queries. Sub-second search performance at scale.</p>
+            </div>
+
+            <div class="tech-item">
+                <strong>Philosophy</strong>
+                <p>Open standards over proprietary systems. Security and privacy by design. Community-auditable codebase. No platform lock-in for tourism boards.</p>
+            </div>
+        </div>
+    </div>
+
+<footer>
+        <div class="footer-content">
+             <div class="footer-nav">
+                <a href="/">Home</a>
+                <a href="/roadmap.html">Roadmap</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+             <div class="footer-socials">
+                 <a href="mailto:hello@hyprmaps.com" aria-label="Email HyprMaps">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path></svg>
+                 </a>
+                 <a href="https://twitter.com/hyprmaps" target="_blank" rel="noopener noreferrer" aria-label="HyprMaps on X/Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                 </a>
+            </div>
+             <div class="footer-bottom-text">
+                <p>&copy; 2025 HyprMaps</p>
+                <p>Building in public since Oct 2025</p>
+             </div>
+        </div>
+    </footer>
+<script src="main.js"></script>
+</body>
+</html>
