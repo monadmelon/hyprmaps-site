@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about the HyprMaps mission, business model, and the team building a new generation of community-owned tourism infrastructure.">
+    
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
     <title>About - HyprMaps</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,19 +22,25 @@
     <nav>
         <div class="nav-content">
             <a href="/" class="logo">HyprMaps</a>
-            <button class="nav-toggle" aria-label="Toggle navigation menu">
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <div class="nav-links">
+            <div class="nav-links" id="nav-menu">
                 <a href="/roadmap.html">Roadmap</a>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
                     <div class="theme-toggle-slider">
-                        <span class="theme-icon">🌙</span>
+                        <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 008.25-4.5z" />
+                        </svg>
+                        <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <circle cx="12" cy="12" r="3" stroke-linecap="round" stroke-linejoin="round" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2V4M12 20V22M4 12H2M22 12H20M5.636 5.636L4.222 4.222M19.778 19.778L18.364 18.364M19.778 4.222L18.364 5.636M5.636 18.364L4.222 19.778"/>
+                        </svg>
                     </div>
                 </button>
             </div>
@@ -69,6 +81,9 @@
                 </p>
                 <p>
                     That question became HyprMaps.
+                </p>
+                 <p>
+                    <strong>(Suggestion: Add a "Founder" or "Team" section here. B2G sales require trust in the people behind the product.)</strong>
                 </p>
             </section>
 
@@ -169,8 +184,14 @@
             </section>
             
         </main>
-    </div> <footer>
+    </div> 
+    
+    <footer>
         <div class="footer-content">
+             <div class="footer-bottom-text">
+                <p>&copy; 2025 HyprMaps</p>
+                <p>Building in public since Oct 2025</p>
+             </div>
              <div class="footer-nav">
                 <a href="/">Home</a>
                 <a href="/roadmap.html">Roadmap</a>
@@ -187,10 +208,6 @@
                     </svg>
                  </a>
             </div>
-             <div class="footer-bottom-text">
-                <p>&copy; 2025 HyprMaps</p>
-                <p>Building in public since Oct 2025</p>
-             </div>
         </div>
     </footer>
 

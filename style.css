@@ -28,7 +28,7 @@
     --text: #FEFAE1; 
     --text-light: #A1B9B9; 
     --bg: #1D2729; 
-    --bg-alt: #2C3E40; 
+    --bg-alt: #2C3E40; /* This is now mostly unused, but kept for potential future use */
     --border: #3E5356;
     
     /* Added frost-gray from other pages for consistency */
@@ -61,6 +61,16 @@ h1, h2, h3 {
     letter-spacing: -0.02em;
     line-height: 1.2;
      color: var(--text); /* Added for consistency */
+}
+
+/* NEW: Eyebrow text style */
+.eyebrow-text {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
 }
 
 /* Header/Nav */
@@ -128,6 +138,15 @@ nav {
 .nav-links a:hover::after { width: 100%; }
 .nav-links a:hover { color: var(--primary); }
 
+/* NEW: Active nav link style */
+.nav-links a.active {
+    color: var(--primary);
+}
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
 /* Mobile Nav Toggle */
 .nav-toggle {
     display: none;
@@ -148,15 +167,17 @@ nav {
     transition: all 0.3s ease;
 }
 
+/* Corrected the hamburger 'X' transformation for perfect centering */
 .nav-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
+    transform: translateY(7px) rotate(45deg);
 }
 .nav-toggle.active span:nth-child(2) {
     opacity: 0;
 }
 .nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: translateY(-7px) rotate(-45deg);
 }
+
 
 .theme-toggle {
     position: relative;
@@ -168,6 +189,8 @@ nav {
     cursor: pointer;
     transition: background-color 0.3s ease;
     padding: 0;
+    display: flex; /* MODIFIED */
+    align-items: center; /* MODIFIED */
 }
 
 .theme-toggle:hover {
@@ -190,6 +213,35 @@ nav {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
+/* SVG Icon styling for toggle */
+.theme-toggle .icon {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2;
+    stroke: var(--primary);
+    fill: none;
+}
+/* Show sun by default (light mode) */
+.theme-toggle .icon-sun { 
+    display: block; 
+    stroke: var(--primary);
+}
+/* Hide moon by default (light mode) */
+.theme-toggle .icon-moon { 
+    display: none; 
+}
+
+/* Hide sun in dark mode */
+[data-theme="dark"] .icon-sun { 
+    display: none; 
+}
+/* Show moon in dark mode */
+[data-theme="dark"] .icon-moon { 
+    display: block;
+    stroke: var(--primary);
+}
+
+
 [data-theme="dark"] .theme-toggle {
     background: var(--bg-alt);
 }
@@ -200,12 +252,16 @@ nav {
 
 /* Hero (from index.html) */
 .hero {
-    text-align: center;
+    text-align: center; /* MODIFIED: Reverted */
     padding: 4rem 0; /* Reduced padding */
     background: var(--bg); 
     transition: background 0.3s ease;
-     border-bottom: 1px solid var(--border); /* Added */
+    /* border-bottom: 1px solid var(--border); */ /* REMOVED border */
 }
+
+/* REMOVED: Hero layout styles */
+
+/* REMOVED: Visual placeholder for hero mockup */
 
 .badge {
     display: inline-block;
@@ -236,15 +292,15 @@ h1 {
     color: var(--text-light);
     margin-bottom: 2rem; /* Reduced margin */
     line-height: 1.6;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 650px; /* MODIFIED: Reverted */
+    margin-left: auto; /* MODIFIED: Reverted */
+    margin-right: auto; /* MODIFIED: Reverted */
 }
 
 .cta-buttons {
     display: flex;
     gap: 0.75rem; /* Reduced gap */
-    justify-content: center;
+    justify-content: center; /* MODIFIED: Reverted */
     flex-wrap: wrap;
 }
 
@@ -280,16 +336,23 @@ h1 {
 .btn-secondary:hover {
     border-color: var(--text);
     color: var(--text);
+    transform: translateY(-1px); /* NEW */
 }
 
 /* Sections */
 section {
-    padding: 4rem 0; /* Reduced padding */
+    padding: 3.5rem 0; /* MODIFIED: Reduced padding */
     transition: background-color 0.3s ease;
+    border-top: 1px solid var(--border); /* NEW: Added top border for separation */
+}
+
+/* Special rule for the first section after hero */
+.hero + section {
+    border-top: none; /* Remove border from the very first section */
 }
 
 .section-alt {
-    background: var(--bg-alt);
+    /* background: var(--bg-alt); */ /* REMOVED: Unified background */
 }
 
 h2 {
@@ -306,17 +369,25 @@ h2 {
     max-width: 650px;
 }
 
+/* NEW: Section intro with eyebrow */
+.section-header {
+    margin-bottom: 2.5rem;
+}
+.section-header .section-intro {
+    margin-bottom: 0;
+}
+
+
 /* Features Grid (from index.html) */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
     gap: 1.5rem; /* Reduced gap */
-    margin-top: 2.5rem; /* Reduced margin */
 }
 
 .feature-box {
     padding: 1.75rem; /* Reduced padding */
-    background: var(--bg);
+    background: var(--bg-alt); /* MODIFIED: Use alt background for cards now */
     border-radius: 10px; /* Slightly less rounded */
     border: 1px solid var(--border);
     transition: all 0.3s ease;
@@ -380,14 +451,23 @@ h2 {
 }
 
 .status-card li:before {
-    content: "✓";
+    /* MODIFIED: Using SVG Check */
+    content: "";
     position: absolute;
     left: 0;
-    font-weight: bold;
-    font-size: 1.1rem; /* Smaller icon */
+    top: 0.5em;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23FEFAE1'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd' /%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* Progress List (from index.html) */
+/* REMOVED: Pilot section layout */
+/* REMOVED: Placeholder for Varkala pilot map */
+
+
 .progress-list {
     list-style: none;
     margin: 1.5rem 0;
@@ -468,7 +548,7 @@ body:has(div.phase) .container {
 }
 
 .contact-box {
-    background: var(--bg-alt);
+    background: var(--bg-alt); /* MODIFIED: Use alt bg for cards */
     padding: 2rem; 
     border-radius: 10px;
     margin: 2rem 0; 
@@ -477,11 +557,40 @@ body:has(div.phase) .container {
      opacity: 0; 
     transform: translateY(20px); 
     animation: fadeInUp 0.5s ease forwards;
+    position: relative; /* NEW */
+    padding-top: 2.5rem; /* NEW: Make space for icon */
 }
 .contact-box:nth-of-type(1) { animation-delay: 0.1s; }
 .contact-box:nth-of-type(2) { animation-delay: 0.2s; }
 .contact-box:nth-of-type(3) { animation-delay: 0.3s; }
 .contact-box:nth-of-type(4) { animation-delay: 0.4s; }
+
+/* NEW: Contact box icon */
+.contact-box-icon {
+    position: absolute;
+    top: -16px; /* Position half-in, half-out */
+    left: 1.5rem;
+    background: var(--primary);
+    color: var(--bg);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--border);
+}
+[data-theme="dark"] .contact-box-icon {
+    border-color: var(--bg); /* MODIFIED: Use main bg for border */
+}
+.contact-box-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--bg);
+    stroke-width: 2;
+}
+
 
 .contact-box:hover {
     transform: translateY(-4px); 
@@ -521,7 +630,7 @@ body:has(div.phase) .container {
     text-align: center;
     margin: 3.5rem 0; 
     padding: 2.5rem; 
-    background: var(--bg-alt);
+    background: var(--bg-alt); /* MODIFIED: Use alt bg */
     border-radius: 10px;
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
     border: 1px solid var(--border); 
@@ -583,7 +692,7 @@ body:has(div.phase) .container {
 }
 
 .mission-box {
-    background: var(--bg-alt);
+    background: var(--bg-alt); /* MODIFIED: Use alt bg */
     padding: 2.5rem; 
     border-radius: 10px; 
     border-left: 4px solid var(--primary); 
@@ -608,6 +717,8 @@ body:has(div.phase) .container {
     line-height: 1.7; 
 }
 
+/* REMOVED: .story-layout and .story-visual styles */
+
 .about-page h2 { /* Section titles */
     font-size: 1.85rem; 
     margin: 3.5rem 0 1.5rem 0; 
@@ -628,15 +739,16 @@ body:has(div.phase) .container {
      line-height: 1.8;
 }
 .values li::before {
-     content: "•"; 
+     /* MODIFIED: Using SVG Icon */
+     content: "";
      position: absolute;
      left: 0;
-     top: 0.9em; 
-     transform: translateY(-50%);
-     color: var(--primary);
-     font-weight: bold;
-     font-size: 1.3rem; 
-     line-height: 1; 
+     top: 0.6em;
+     width: 18px;
+     height: 18px;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='3' stroke='%23539562'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M4.5 12.75l6 6 9-13.5' /%3E%3C/svg%3E");
+     background-size: contain;
+     background-repeat: no-repeat;
 }
  .values li strong { 
      color: var(--text); 
@@ -651,7 +763,7 @@ body:has(div.phase) .container {
 }
 .status-item {
     padding: 1.5rem; 
-    background: var(--bg-alt);
+    background: var(--bg-alt); /* MODIFIED: Use alt bg */
     border-radius: 8px;
     border: 1px solid var(--border);
     transition: all var(--transition-speed);
@@ -740,7 +852,7 @@ body:has(div.phase) .container {
 .phase {
     margin: 3.5rem 0; 
     padding: 2.5rem; 
-    background: var(--bg-alt);
+    background: var(--bg-alt); /* MODIFIED: Use alt bg */
     border-radius: 12px; 
     border-left: 4px solid var(--primary); 
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
@@ -771,7 +883,7 @@ body:has(div.phase) .container {
 .week-block {
     margin: 1.5rem 0; 
     padding: 1.75rem; 
-    background: var(--bg); 
+    background: var(--bg); /* Keep week blocks on main bg */
     border-radius: 8px; 
     border: 1px solid var(--border);
     transition: all var(--transition-speed);
@@ -834,31 +946,42 @@ body:has(div.phase) .container {
      display: flex; 
      align-items: center;
      justify-content: center;
+     
+    /* NEW: SVG Icon for 'pending' */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23CADEDF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M5 12h14' /%3E%3C/svg%3E");
+    background-size: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: var(--border);
 }
-.checklist li.pending::before { border-color: var(--border); }
+
 .checklist li.progress::before {
+    /* NEW: SVG Icon for 'progress' */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f59e0b' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' /%3E%3C/svg%3E");
+    background-size: 8px;
     border-color: #f59e0b;
-    background: #f59e0b;
+    background-color: #f59e0b;
 }
+
 .checklist li:not(.pending):not(.progress) {
+    /* MODIFIED: Removed strikethrough, using opacity */
     color: var(--text-light); 
-    text-decoration: line-through;
-    opacity: 0.8; 
+    /* text-decoration: line-through; */ /* REMOVED */
+    opacity: 0.7; 
 }
 .checklist li:not(.pending):not(.progress)::before {
+    /* MODIFIED: Using SVG Check */
     border-color: var(--primary);
-    background: var(--primary);
-    content: '✓'; 
-    color: var(--bg);
-    font-size: 0.8rem;
-    line-height: 1; 
-    font-weight: bold;
+    background-color: var(--primary);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23FEFAE1'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd' /%3E%3C/svg%3E");
+    background-size: 12px;
 }
+
 
 .update-log, .tech-stack {
     margin: 3.5rem 0; 
     padding: 2.5rem; 
-    background: var(--bg-alt);
+    background: var(--bg-alt); /* MODIFIED: Use alt bg */
     border: 1px solid var(--border);
     border-radius: 12px; 
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
@@ -926,29 +1049,34 @@ body:has(div.phase) .container {
 
 /* Footer (Shared) */
 footer {
-    background: var(--bg-alt);
+    background: var(--bg-alt); /* MODIFIED: Use alt bg */
     border-top: 1px solid var(--border);
     padding: 3rem 0; 
-    margin-top: 5rem; 
+    margin-top: 3.5rem; /* MODIFIED: Reduced margin */
     transition: background-color var(--transition-speed);
 }
 .footer-content {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    gap: 1.5rem; 
+    /* MODIFIED: Aligned with container */
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5rem;
+
+    display: flex;
+    flex-direction: row; /* MODIFIED */
+    align-items: center; /* MODIFIED */
+    justify-content: space-between; /* MODIFIED */
+    gap: 1.5rem; 
+    
     color: var(--text-light);
     font-size: 0.9rem; 
-    text-align: center;
+    text-align: left; /* MODIFIED */
 }
 .footer-nav {
     display: flex;
     gap: 1.75rem; 
     justify-content: center; 
     flex-wrap: wrap;
+    order: 2; /* NEW */
 }
 .footer-nav a {
     color: var(--text);
@@ -969,10 +1097,14 @@ footer {
      transition: width var(--transition-speed);
  }
  .footer-nav a:hover::after { width: 100%; }
-.footer-nav a:hover { color: var(--primary); }
+.footer-nav a:hover { 
+    color: var(--primary); 
+    transform: translateY(-1px); /* NEW */
+}
 .footer-socials {
      display: flex;
      gap: 1.25rem; 
+     order: 3; /* NEW */
 }
 .footer-socials a {
     color: var(--frost-gray); 
@@ -987,6 +1119,10 @@ footer {
      width: 22px; 
      height: 22px;
      fill: currentColor;
+}
+.footer-bottom-text { 
+    order: 1; /* NEW */
+    flex-grow: 1; /* NEW */
 }
 .footer-bottom-text p { margin: 0.2rem 0; }
 
@@ -1033,22 +1169,50 @@ footer {
     .nav-toggle {
         display: block;
     }
+
+    /* MODIFIED: Hero mobile styles */
+    .hero {
+        text-align: center;
+        padding: 3rem 0;
+    }
+    /* REMOVED: .hero .container grid style */
+    
+    /* REMOVED: .visual-placeholder height */
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cta-buttons {
+        justify-content: center;
+    }
     
     .features {
         grid-template-columns: 1fr;
     }
     
     section {
-        padding: 3rem 0;
+        padding: 3rem 0; /* Adjusted section padding */
     }
+
+    /* REMOVED: Pilot section mobile styles */
+    
+    /* MODIFIED: Footer mobile */
     .footer-content {
         flex-direction: column;
         text-align: center;
         gap: 1.5rem;
     }
+    .footer-nav { order: 2; }
+    .footer-socials { order: 3; }
+    .footer-bottom-text { order: 1; }
     
     /* Page-specific responsive */
-    .contact-box { padding: 1.5rem; margin: 1.5rem 0; }
+    .contact-box { padding: 1.5rem; margin: 1.5rem 0; padding-top: 2rem; }
     .status-grid { grid-template-columns: 1fr; }
     .phase, .update-log, .tech-stack { padding: 1.75rem; }
     .week-block { padding: 1.25rem; }
