@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
-            
+
             // NEW: Toggle ARIA attribute
             const isExpanded = navToggle.classList.contains('active');
             navToggle.setAttribute('aria-expanded', isExpanded);
@@ -42,11 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (link.getAttribute('href') === '/' && currentPath === '/') {
             link.classList.add('active');
         }
-        // Handle other paths
-        else if (link.getAttribute('href') !== '/' && currentPath.includes(link.getAttribute('href'))) {
+        // Handle other paths (make sure it's not just '/')
+        else if (link.getAttribute('href') !== '/' && currentPath.startsWith(link.getAttribute('href'))) {
              link.classList.add('active');
         }
     });
 });
-
-// NOTE: The extra '}' at the end of the original file has been removed.
