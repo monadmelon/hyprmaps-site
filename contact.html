@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get in touch with the HyprMaps team. Contact us for partnerships, tourism board demos, press, or to join the Varkala pilot program.">
     
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/public/pwa-icon.png" sizes="any">
+    <link rel="icon" href="/public/pwa-icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
     <title>Contact - HyprMaps</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
 
 </head>
 <body>
     <nav>
-        <div class="nav-content">
-            <a href="/" class="logo">HyprMaps</a>
+        <div class="container nav-content">
+            <a href="/" class="logo">
+                <img src="/public/pwa-icon.svg" alt="HyprMaps Logo">
+                HyprMaps
+            </a>
             <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
@@ -30,18 +34,7 @@
             <div class="nav-links" id="nav-menu">
                 <a href="/roadmap.html">Roadmap</a>
                 <a href="/about.html">About</a>
-                <a href="/contact.html">Contact</a>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-                    <div class="theme-toggle-slider">
-                        <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 008.25-4.5z" />
-                        </svg>
-                        <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <circle cx="12" cy="12" r="3" stroke-linecap="round" stroke-linejoin="round" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2V4M12 20V22M4 12H2M22 12H20M5.636 5.636L4.222 4.222M19.778 19.778L18.364 18.364M19.778 4.222L18.364 5.636M5.636 18.364L4.222 19.778"/>
-                        </svg>
-                    </div>
-                </button>
+                <a href="/contact.html" class="active">Contact</a>
             </div>
         </div>
     </nav>
@@ -49,94 +42,70 @@
     <div class="container">
         <div class="page-header">
             <h1>Get in Touch</h1>
+            <p class="subtitle">
+                Questions about HyprMaps? Interested in licensing the platform?<br>
+                Want to collaborate? We'd love to hear from you.
+            </p>
         </div>
 
-        <p class="intro">
-            Questions about HyprMaps? Interested in licensing the platform?<br>
-            Want to collaborate? We'd love to hear from you.
-        </p>
-
-        <div class="contact-box">
-            <div class="contact-box-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h6.75M9 11.25h6.75M9 15.75h6.75M5.25 6.75h.008v.008H5.25V6.75zm.008 4.5h.008v.008H5.25v-.008zm0 4.5h.008v.008H5.25v-.008z" />
-                </svg>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h6.75M9 11.25h6.75M9 15.75h6.75M5.25 6.75h.008v.008H5.25V6.75zm.008 4.5h.008v.008H5.25v-.008zm0 4.5h.008v.008H5.25v-.008z" />
+                    </svg>
+                </div>
+                <h2>For Tourism Boards</h2>
+                <p>
+                    Interested in licensing HyprMaps for your destination? Let's discuss how we can help you own your tourism infrastructure.
+                </p>
+                <a href="mailto:partnerships@hyprmaps.com" class="btn btn-secondary">partnerships@hyprmaps.com</a>
             </div>
-            <h2>For Tourism Boards & DMOs</h2>
-            <p>
-                Interested in licensing HyprMaps for your destination?<br>
-                Let's discuss how we can help you own your tourism infrastructure.
-            </p>
-            <p>
-                <a href="mailto:partnerships@hyprmaps.com" class="email-link">partnerships@hyprmaps.com</a>
-            </p>
-            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.75rem;">
-               <!-- [Suggestion: Replace this text with an embedded Calendly link] -->
-            </p>
-        </div>
 
-        <div class="contact-box">
-            <div class="contact-box-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75 0M2.36 9.35A3.001 3.001 0 006.11 9.35m0 0a3.001 3.001 0 013.75 0M9.86 9.35A3.001 3.001 0 0113.61 9.35m0 0a3.001 3.001 0 013.75 0M17.36 9.35A3.001 3.001 0 0121.11 9.35m0 0v11.65m0 0a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75H2.25a.75.75 0 00-.75.75v16.5a.75.75 0 00.75.75h18.75z" />
-                </svg>
+            <div class="contact-card">
+                <div class="feature-icon">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0l-4.5 16.5" />
+                    </svg>
+                </div>
+                <h2>For Developers</h2>
+                <p>
+                    Interested in contributing to the platform once we open-source? Want to collaborate on tourism tech?
+                </p>
+                <a href="mailto:dev@hyprmaps.com" class="btn btn-secondary">dev@hyprmaps.com</a>
             </div>
-            <h2>For Local Businesses (Varkala)</h2>
-            <p>
-                Want to be part of our Varkala pilot program?<br>
-                Get your business listed and help us build the future of local tourism.
-            </p>
-            <p>
-                <a href="mailto:varkala@hyprmaps.com" class="email-link">varkala@hyprmaps.com</a>
-            </p>
-        </div>
 
-        <div class="contact-box">
-            <div class="contact-box-icon">
-                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0l-4.5 16.5" />
-                </svg>
+            <div class="contact-card">
+                 <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75c0 8.284-6.716 15-15 15H5.25A2.25 2.25 0 013 18.75V8.25c0-1.036.84-1.875 1.875-1.875H16.5c1.036 0 1.875.84 1.875 1.875v.75c0 .414.336.75.75.75h.75a.75.75 0 00.75-.75V8.25A2.25 2.25 0 0018.75 6H5.25c-1.036 0-1.875.84-1.875 1.875v10.5c0 1.036.84 1.875 1.875 1.875h.375a.75.75 0 00.75-.75V11.25a1.5 1.5 0 011.5-1.5h11.25a.75.75 0 00.75-.75V8.25a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v1.5a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75v-1.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75v1.5c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v1.5a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75v-1.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75v1.5c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v3.75a.75.75 0 00.75.75h.375a.75.75 0 00.75-.75V18a.75.75 0 01.75-.75h3.75a.75.75 0 01.75.75v1.5a.75.75 0 00.75.75h.375a.75.75 0 00.75-.75v-1.5a.75.75 0 01.75-.75h3.75a.75.75 0 01.75.75v1.5a.75.75 0 00.75.75h.375a.75.75 0 00.75-.75v-1.5a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v3.75c0 .414-.336.75-.75.75H21a.75.75 0 00.75-.75v-3.75c0-.414-.336-.75-.75-.75h-.75a.75.75 0 00-.75.75v.75z" />
+                    </svg>
+                </div>
+                <h2>General Inquiries</h2>
+                <p>
+                    For press, partnerships, or any other questions:
+                </p>
+                <a href="mailto:hello@hyprmaps.com" class="btn btn-secondary">hello@hyprmaps.com</a>
             </div>
-            <h2>For Developers</h2>
-            <p>
-                Interested in contributing to the platform once we open-source?<br>
-                Want to collaborate on tourism tech?
-            </p>
-            <p>
-                <a href="mailto:dev@hyprmaps.com" class="email-link">dev@hyprmaps.com</a>
-            </p>
-            <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.75rem;">
-                GitHub: <a href="https://github.com/hyprmaps" style="color: var(--primary);">github.com/hyprmaps</a> (repo coming Nov 2025)
-            </p>
         </div>
 
-        <div class="contact-box">
-             <div class="contact-box-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75c0 8.284-6.716 15-15 15H5.25A2.25 2.25 0 013 18.75V8.25c0-1.036.84-1.875 1.875-1.875H16.5c1.036 0 1.875.84 1.875 1.875v.75c0 .414.336.75.75.75h.75a.75.75 0 00.75-.75V8.25A2.25 2.25 0 0018.75 6H5.25c-1.036 0-1.875.84-1.875 1.875v10.5c0 1.036.84 1.875 1.875 1.875h.375a.75.75 0 00.75-.75V11.25a1.5 1.5 0 011.5-1.5h11.25a.75.75 0 00.75-.75V8.25a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v1.5a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75v-1.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75v1.5c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v1.5a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75v-1.5a.75.75 0 00-.75-.75h-1.5a.75.75 0 00-.75.75v1.5c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v3.75a.75.75 0 00.75.75h.375a.75.75 0 00.75-.75V18a.75.75 0 01.75-.75h3.75a.75.75 0 01.75.75v1.5a.75.75 0 00.75.75h.375a.75.75 0 00.75-.75v-1.5a.75.75 0 01.75-.75h3.75a.75.75 0 01.75.75v1.5a.75.75 0 00.75.75h.375a.75.75 0 00.75-.75v-1.5a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v3.75c0 .414-.336.75-.75.75H21a.75.75 0 00.75-.75v-3.75c0-.414-.336-.75-.75-.75h-.75a.75.75 0 00-.75.75v.75z" />
-                </svg>
-            </div>
-            <h2>General Inquiries</h2>
-            <p>
-                For press, partnerships, or any other questions:
-            </p>
-            <p>
-                <a href="mailto:hello@hyprmaps.com" class="email-link">hello@hyprmaps.com</a>
-            </p>
-        </div>
-
-        <div class="follow-section">
-            <h2>Follow Our Journey</h2>
-            <p>
+        <div class="glass-card" style="text-align: center; margin-top: 4rem; padding: 3rem;">
+            <h2 style="margin-bottom: 1rem;">Follow Our Journey</h2>
+            <p style="margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                 Building in public. Weekly updates on development progress.
             </p>
-            <p>
-                <strong>X/Twitter:</strong> <a href="https://twitter.com/hyprmaps">@hyprmaps</a><br>
-                <strong>Roadmap:</strong> <a href="/roadmap.html">hyprmaps.com/roadmap</a>
-            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://twitter.com/hyprmaps" target="_blank" class="btn btn-secondary" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                    </svg>
+                    @hyprmaps
+                </a>
+                <a href="/roadmap.html" class="btn btn-primary">View Roadmap</a>
+            </div>
         </div>
 
-        <div class="meta-info">
+        <div class="meta-info" style="text-align: center; margin-top: 3rem; color: var(--text-muted); font-size: 0.9rem;">
             <p><strong>Response time:</strong> 24-48 hours</p>
             <p style="margin-top: 0.25rem;">Based in India | Building for the world</p>
         </div>
@@ -146,7 +115,7 @@
         <div class="footer-content">
              <div class="footer-bottom-text">
                 <p>&copy; 2025 HyprMaps</p>
-                <p>Building in public since Oct 2025</p>
+                <p style="font-size: 0.9rem; color: var(--text-dim);">Building in public since Oct 2025</p>
              </div>
              <div class="footer-nav">
                 <a href="/">Home</a>

@@ -1,0 +1,16 @@
+/* About Page Styles */
+
+/* Legacy values styles - keeping just in case, though likely unused after revamp */
+.values li {
+  padding-left: 2rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.values li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}

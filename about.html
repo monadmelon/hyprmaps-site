@@ -5,182 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn about the HyprMaps mission, business model, and the team building a new generation of community-owned tourism infrastructure.">
     
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/public/pwa-icon.png" sizes="any">
+    <link rel="icon" href="/public/pwa-icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
     <title>About - HyprMaps</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
 </head>
 <body class="about-page">
     
     <nav>
-        <div class="nav-content">
-            <a href="/" class="logo">HyprMaps</a>
+        <div class="container nav-content">
+            <a href="/" class="logo">
+                <img src="/public/pwa-icon.svg" alt="HyprMaps Logo">
+                HyprMaps
+            </a>
             <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <div class="nav-links" id="nav-menu">
-                <a href="/roadmap.html">Roadmap</a>
-                <a href="/about.html">About</a>
-                <a href="/contact.html">Contact</a>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-                    <div class="theme-toggle-slider">
-                        <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 008.25-4.5z" />
-                        </svg>
-                        <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <circle cx="12" cy="12" r="3" stroke-linecap="round" stroke-linejoin="round" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2V4M12 20V22M4 12H2M22 12H20M5.636 5.636L4.222 4.222M19.778 19.778L18.364 18.364M19.778 4.222L18.364 5.636M5.636 18.364L4.222 19.778"/>
-                        </svg>
-                    </div>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        
-        <header class="page-header">
-            <h1>About HyprMaps</h1>
-        </header>
-
-        <main>
-            
-            <section class="mission-box">
-                <h2>The Mission</h2>
-                <p>
-                    Tourism infrastructure should empower communities, not extract from them.
-                </p>
-                <p>
-                    HyprMaps provides white-label platform technology to destinations worldwide—
-                    helping them own their tourism narrative without commissions, without vendor 
-                    lock-in, without selling out to big tech.
-                </p>
-            </section>
-
-            <section class="story">
-                <h2>Why This Exists</h2>
-                <p>
-                    After visiting tourist destinations across India, a pattern became clear: 
-                    Google Maps had outdated information. OTA platforms charged local businesses 
-                    significant commissions. The best recommendations came from conversations with 
-                    locals—hyperlocal knowledge no algorithm captured.
-                </p>
-                <p>
-                    One question kept surfacing: <strong>Why don't tourist destinations have infrastructure 
-                    that serves their communities instead of Silicon Valley shareholders?</strong>
-                </p>
-                <p>
-                    That question became HyprMaps.
-                </p>
-                 <p>
-                   <!-- <strong>(Suggestion: Add a "Founder" or "Team" section here. B2G sales require trust in the people behind the product.)</strong>
-                --></p>
-            </section>
-
-            <section class="model">
-                <h2>The Model</h2>
-                <p>
-                    HyprMaps is B2G SaaS. We license platform technology to tourism boards and 
-                    destination management organizations, not transaction fees from businesses.
-                </p>
-                <p>
-                    Tourism boards customize with their branding, train local moderators, and decide 
-                    their own monetization strategy. We provide technology and ongoing support. 
-                    They own operations, relationships, and data.
-                </p>
-                <p>
-                    We also operate consumer instances (starting with Varkala) at hyprmaps.com—both as 
-                    live demonstrations for government pitches and as sustainable revenue while 
-                    closing enterprise contracts.
-                </p>
-                <p>
-                    Same technology platform, dual revenue streams, de-risked business model.
-                </p>
-            </section>
-            
-            <section class="status">
-                <h2>Current Status</h2>
-                <div class="status-grid">
-                    <div class="status-item">
-                        <strong>Stage</strong>
-                        <p>Building MVP, November 2025 launch</p>
-                    </div>
-                    <div class="status-item">
-                        <strong>Pilot</strong>
-                        <p>Varkala, Kerala reference implementation</p>
-                    </div>
-                    <div class="status-item">
-                        <strong>Pipeline</strong>
-                        <p>Discussions with Kerala Tourism</p>
-                    </div>
-                    <div class="status-item">
-                        <strong>Funding</strong>
-                        <p>Bootstrapped, profitable by design</p>
+                        </p>
                     </div>
                 </div>
-                <p>
-                    Open to collaboration with tourism boards, developers, and impact investors.
-                </p>
             </section>
 
-            <section class="values">
-                <h2>What We Believe</h2>
-                <ul>
-                    <li><strong>Community ownership</strong> over corporate extraction</li>
-                    <li><strong>Local knowledge</strong> over algorithms</li>
-                    <li><strong>Real-time accuracy</strong> over stale data</li>
-                    <li><strong>Open infrastructure</strong> over vendor lock-in</li>
-                    <li><strong>Sustainable business</strong> over growth-at-all-costs</li>
-                    <li><strong>Transparent building</strong> over stealth mode</li>
-                </ul>
+            <section class="values" style="margin-bottom: 4rem;">
+                <h2 style="margin-bottom: 2rem; text-align: center;">What We Believe</h2>
+                <div class="features">
+                    <div class="feature-box">
+                        <h3>Community Ownership</h3>
+                        <p>Local stakeholders should control their digital infrastructure, not foreign corporations.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>Local Knowledge</h3>
+                        <p>Curated, verified local insights are more valuable than algorithmic recommendations.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>Open Infrastructure</h3>
+                        <p>We build on open standards to prevent vendor lock-in and ensure long-term sustainability.</p>
+                    </div>
+                </div>
             </section>
 
-            <section class="how-it-works">
-                <h2>How It Works</h2>
-                <p>
-                    <strong>For destinations:</strong> License our platform with your branding and 
-                    operate it with local teams. Keep all revenue, own all data, export anytime.
+            <section class="glass-card" style="text-align: center; padding: 4rem 2rem;">
+                <h2 style="margin-bottom: 1.5rem;">Open to Collaboration</h2>
+                <p style="max-width: 600px; margin: 0 auto 2rem auto; color: var(--text-muted);">
+                    Whether you're a tourism board, a developer, or an impact investor, we'd love to talk about the future of sustainable tourism.
                 </p>
-                <p>
-                    <strong>For travelers:</strong> Use our consumer instances at hyprmaps.com—
-                    community-powered guides we operate ourselves with verified local information.
-                </p>
-                <p>
-                    <strong>For businesses:</strong> Get listed with verified status, real-time updates, 
-                    and direct customer connections without high commissions.
-                </p>
-                <p>
-                    <strong>For developers:</strong> Built on open-source foundations. 
-                    Contributions welcome as we expand.
-                </p>
-            </section>
-
-            <section class="collaboration">
-                <h2>Open to Collaboration</h2>
-                <p>
-                    <strong>Tourism boards:</strong> Schedule a call to explore platform licensing.
-                </p>
-                <p>
-                    <strong>Developers:</strong> Interested in contributing? Reach out as we prepare to open-source components.
-                </p>
-                <p>
-                    <strong>Local businesses:</strong> If you're in Varkala, join our pilot program.
-                </p>
-                <p>
-                    <strong>Impact investors:</strong> Connect once we demonstrate Kerala Tourism traction.
-                </p>
-                
-                <a href="/contact.html" class="cta-link">Get in touch →</a>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/contact.html" class="btn btn-primary">Get in Touch</a>
+                    <a href="https://varkala.hyprmaps.com" target="_blank" class="btn btn-secondary">Launch Pilot App</a>
+                </div>
             </section>
             
         </main>
@@ -190,7 +73,7 @@
         <div class="footer-content">
              <div class="footer-bottom-text">
                 <p>&copy; 2025 HyprMaps</p>
-                <p>Building in public since Oct 2025</p>
+                <p style="font-size: 0.9rem; color: var(--text-dim);">Building in public since Oct 2025</p>
              </div>
              <div class="footer-nav">
                 <a href="/">Home</a>

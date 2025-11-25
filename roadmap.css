@@ -1,0 +1,81 @@
+/* Roadmap Page Styles */
+
+.phase {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 480px) {
+  .phase {
+    padding-left: 2rem;
+  }
+  
+  .phase-marker {
+    left: -5px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .phase::before {
+    left: 2px;
+  }
+}
+
+.phase::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--primary),
+    rgba(255, 255, 255, 0.1)
+  );
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.phase:last-child::before {
+  display: none;
+}
+
+.phase-marker {
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-deep);
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 15px var(--primary-glow);
+  z-index: 1;
+}
+
+.phase.completed .phase-marker {
+  background: var(--primary);
+  box-shadow: 0 0 20px var(--primary);
+}
+
+.phase.active .phase-marker {
+  background: var(--bg-deep);
+  border-color: #10b981;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+/* Badges */
+.badge.live {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.badge.planned {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-light);
+  color: var(--text-muted);
+  box-shadow: none;
+}

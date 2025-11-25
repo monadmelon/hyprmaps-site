@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Follow the HyprMaps public development roadmap. See our current phase, recent progress, and future plans for our tourism platform.">
     
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/public/pwa-icon.png" sizes="any">
+    <link rel="icon" href="/public/pwa-icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
     <title>Development Roadmap - HyprMaps</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="roadmap.css">
 
 </head>
-<body class="roadmap-page"> <nav>
-        <div class="nav-content">
-            <a href="/" class="logo">HyprMaps</a>
+<body class="roadmap-page"> 
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="logo">
+                <img src="/public/pwa-icon.svg" alt="HyprMaps Logo">
+                HyprMaps
+            </a>
             <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
@@ -27,124 +32,58 @@
             </button>
             
             <div class="nav-links" id="nav-menu">
-                <a href="/roadmap.html">Roadmap</a>
+                <a href="/roadmap.html" class="active">Roadmap</a>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-                    <div class="theme-toggle-slider">
-                        <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 008.25-4.5z" />
-                        </svg>
-                        <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                            <circle cx="12" cy="12" r="3" stroke-linecap="round" stroke-linejoin="round" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2V4M12 20V22M4 12H2M22 12H20M5.636 5.636L4.222 4.222M19.778 19.778L18.364 18.364M19.778 4.222L18.364 5.636M5.636 18.364L4.222 19.778"/>
-                        </svg>
-                    </div>
-                </button>
             </div>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="page-header">
-            <h1>Development Roadmap</h1>
-            <p class="subtitle">Building transparently. Every milestone documented.</p>
-            <p class="subtitle"><strong>Started:</strong> October 2025</p>
-        </div>
-
-        <div class="status-badge">
-            <strong>Current Phase: MVP Development</strong>
-            <p>Building Varkala pilot with core mapping and categorization features</p>
-            <p>Updated: Oct 23, 2025</p>
-        </div>
-
-        <div class="phase">
-            <h2>Phase 1: MVP - Varkala Pilot</h2> 
-            <p class="phase-meta">Timeline: October-November 2025</p>
-
-            <div class="week-block">
-                <div class="week-header">
-                    <div class="week-title">Weeks 1-2: Foundation</div>
-                    <div class="week-status status-progress">IN PROGRESS</div> 
-                </div>
-                <ul class="checklist">
-                    <li>Data collection and verification pipeline</li>
-                    <li>Spatial database architecture</li>
-                    <li>Core API development</li>
-                    <li class="progress">Website and brand identity</li>
-                </ul>
-            </div>
-
-            <div class="week-block">
-                <div class="week-header">
-                    <div class="week-title">Week 3: Interactive Mapping</div>
-                    <div class="week-status status-planned">PLANNED</div>
-                </div>
-                <ul class="checklist">
-                    <li class="pending">Map integration with spatial search</li>
-                    <li class="pending">Display verified locations</li>
-                    <li class="pending">Category-based filtering system</li>
-                    <li class="pending">Mobile-responsive interface</li>
-                </ul>
-            </div>
-
-            <div class="week-block">
-                <div class="week-header">
-                    <div class="week-title">Week 4: Launch</div>
-                    <div class="week-status status-planned">PLANNED</div>
-                </div>
-                <ul class="checklist">
-                    <li class="pending">9-category system preview</li>
-                    <li class="pending">Progressive web app capabilities</li>
-                    <li class="pending">Business dashboard (basic analytics)</li>
-                    <li class="pending">Public launch and community feedback</li>
+                <ul class="progress-list">
+                    <li class="progress">Cafe & Restaurant listings</li>
+                    <li class="progress">Experience & Activity providers</li>
+                    <li>Transport & Rental services</li>
+                    <li>User reviews and ratings system</li>
                 </ul>
             </div>
         </div>
 
         <div class="phase">
-            <h2>Phase 2: Validation & Traction</h2>
-            <p class="phase-meta">Timeline: November-December 2025</p>
-            <ul class="checklist">
-                <li class="pending">Expand verified point-of-interest coverage</li>
-                <li class="pending">Onboard local businesses to platform</li>
-                <li class="pending">Collect business and tourist testimonials</li>
-                <li class="pending">Build tourism board pitch with live metrics</li>
-                <li class="pending">Demonstrate platform value with real usage data</li>
-            </ul>
+            <div class="phase-marker"></div>
+            <div class="phase-content glass-card">
+                <h2>Phase 3: Validation & Traction</h2>
+                <p class="phase-meta" style="color: var(--text-muted); margin-bottom: 1.5rem;">Timeline: Q1 2026</p>
+                <ul class="progress-list">
+                    <li>Onboard 50+ local businesses</li>
+                    <li>Collect tourist testimonials</li>
+                    <li>Build tourism board pitch deck</li>
+                    <li>Demonstrate platform value with real data</li>
+                </ul>
+            </div>
         </div>
 
         <div class="phase">
-            <h2>Phase 3: Enterprise Platform</h2>
-            <p class="phase-meta">Timeline: Q1 2026</p>
-            <ul class="checklist">
-                <li class="pending">Multi-tenant white-label architecture</li>
-                <li class="pending">Tourism board administration dashboard</li>
-                <li class="pending">Business self-service portal</li>
-                <li class="pending">Content moderation workflows</li>
-                <li class="pending">Multi-city deployment capabilities</li>
-            </ul>
+            <div class="phase-marker"></div>
+            <div class="phase-content glass-card">
+                <h2>Phase 4: Scale</h2>
+                <p class="phase-meta" style="color: var(--text-muted); margin-bottom: 1.5rem;">Timeline: Q2 2026+</p>
+                <ul class="progress-list">
+                    <li>Multi-destination deployments</li>
+                    <li>International language support</li>
+                    <li>Native mobile applications</li> 
+                    <li>Advanced analytics and reporting</li>
+                    <li>API ecosystem for third-party integrations</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="phase">
-            <h2>Phase 4: Scale</h2>
-            <p class="phase-meta">Timeline: Q2 2026+</p>
-            <ul class="checklist">
-                <li class="pending">Multi-destination deployments</li>
-                <li class="pending">International language support</li>
-                <li class="pending">Native mobile applications</li> 
-                <li class="pending">Advanced analytics and reporting</li>
-                <li class="pending">API ecosystem for third-party integrations</li>
-            </ul>
-        </div>
-
-        <div class="update-log">
+        <div class="update-log glass-card" style="margin-top: 4rem;">
             <h3>Recent Progress</h3>
-            <p class="update-meta">Week 2 - October 23, 2025</p>
+            <p class="update-meta" style="color: var(--text-muted); margin-bottom: 1.5rem;">Week 2 - October 23, 2025</p>
 
-            <div class="update-section">
-                <h4>Completed This Week</h4>
-                <ul>
+            <div class="update-section" style="margin-bottom: 2rem;">
+                <h4 style="margin-bottom: 1rem; color: var(--primary);">Completed This Week</h4>
+                <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-muted);">
                     <li>Launched hyprmaps.com with public roadmap</li>
                     <li>Platform architecture finalized</li>
                     <li>Business model validated with stakeholders</li>
@@ -153,8 +92,8 @@
             </div>
 
             <div class="update-section">
-                <h4>Next Week Focus</h4>
-                <ul>
+                <h4 style="margin-bottom: 1rem; color: var(--secondary);">Next Week Focus</h4>
+                <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-muted);">
                     <li>Complete backend infrastructure</li>
                     <li>Begin frontend development</li>
                     <li>Start business verification outreach</li>
@@ -162,34 +101,36 @@
             </div>
         </div>
 
-        <div class="tech-stack">
+        <div class="tech-stack" style="margin-top: 4rem;">
             <h2>Technology Approach</h2>
-            <p>
+            <p style="margin-bottom: 2rem;">
                 Built on proven open-source infrastructure. Modern, scalable, no vendor lock-in.
             </p>
             
-            <div class="tech-item">
-                <strong>Architecture</strong>
-                <p>Progressive web application with offline-first capabilities. Real-time data synchronization. Mobile-responsive design optimized for tourist usage patterns.</p>
-            </div>
+            <div class="features">
+                <div class="feature-box">
+                    <h3>Architecture</h3>
+                    <p>Progressive web application with offline-first capabilities. Real-time data synchronization. Mobile-responsive design optimized for tourist usage patterns.</p>
+                </div>
 
-            <div class="tech-item">
-                <strong>Infrastructure</strong>
-                <p>Cloud-native deployment with global content delivery. Spatial database optimized for geographic queries. Sub-second search performance at scale.</p>
-            </div>
+                <div class="feature-box">
+                    <h3>Infrastructure</h3>
+                    <p>Cloud-native deployment with global content delivery. Spatial database optimized for geographic queries. Sub-second search performance at scale.</p>
+                </div>
 
-            <div class="tech-item">
-                <strong>Philosophy</strong>
-                <p>Open standards over proprietary systems. Security and privacy by design. Community-auditable codebase. No platform lock-in for tourism boards.</p>
+                <div class="feature-box">
+                    <h3>Philosophy</h3>
+                    <p>Open standards over proprietary systems. Security and privacy by design. Community-auditable codebase. No platform lock-in for tourism boards.</p>
+                </div>
             </div>
         </div>
     </div>
 
-<footer>
+    <footer>
         <div class="footer-content">
              <div class="footer-bottom-text">
                 <p>&copy; 2025 HyprMaps</p>
-                <p>Building in public since Oct 2025</p>
+                <p style="font-size: 0.9rem; color: var(--text-dim);">Building in public since Oct 2025</p>
              </div>
              <div class="footer-nav">
                 <a href="/">Home</a>
