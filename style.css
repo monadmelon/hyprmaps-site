@@ -93,7 +93,13 @@ h1 {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 2.25rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 1.75rem; /* Better fit for small devices */
   }
 }
 
@@ -351,13 +357,21 @@ nav.scrolled {
 /* Features Grid */
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
 @media (max-width: 480px) {
   .features {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .glass-card,
+  .feature-box,
+  .contact-box,
+  .phase-content {
+    padding: 1.5rem;
   }
 }
 

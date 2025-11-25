@@ -8,7 +8,8 @@
 
 @media (max-width: 480px) {
   .phase {
-    padding-left: 2rem;
+    padding-left: 1.5rem; /* More space for content */
+    margin-left: 0.5rem; /* Offset for marker */
   }
   
   .phase-marker {
