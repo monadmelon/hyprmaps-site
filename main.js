@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // NEW: Scroll Animations (Intersection Observer)
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 0.15, // Trigger a bit later for better effect
         rootMargin: "0px 0px -50px 0px"
     };
 
@@ -74,6 +74,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.reveal');
+    const revealElements = document.querySelectorAll('.reveal, .reveal-blur, .reveal-text');
     revealElements.forEach(el => observer.observe(el));
+
+    // NEW: Dynamic Typewriter 
+    const typeWriterElement = document.getElementById('typewriter-text');
+    const cursorElement = document.querySelector('.typewriter-cursor');
+    
+    if (typeWriterElement) {
+        const phrases = [
+            "Your Destination.",
+            "Your Data.",
+            "Your Rules.",
+            "Tourism Infrastructure\nfor Destinations"
+        ];
+        
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            // Determine highlighting/text content
+            if (isDeleting) {
+                typeWriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typeWriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            // Text content updated, styling handled by CSS
+            
+            // Dynamic speed
+            let typeSpeed = isDeleting ? 40 : 80;
+            
+            // Random jitter for realism
+            if (!isDeleting) typeSpeed += Math.random() * 40;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                // Phrase complete
+                if (phraseIndex === phrases.length - 1) {
+                    // Final phrase, stop.
+                    if (cursorElement) cursorElement.classList.add('done');
+                    return; 
+                }
+                
+                // Pause before deleting
+                typeSpeed = 1500;
+                isDeleting = true;
+                
+            } else if (isDeleting && charIndex === 0) {
+                // Deletion complete, move to next
+                isDeleting = false;
+                phraseIndex++;
+                typeSpeed = 400; // Pause before typing next
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Start delay
+        setTimeout(type, 800);
+    }
 });
