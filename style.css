@@ -249,7 +249,7 @@ section {
   margin-bottom: 1.5rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  overflow: hidden; /* Contain the beam */
+  /* overflow: hidden; Removed to allow beam to shine */
 }
 
 /* The Rotating Beam - Only on specific badges */
@@ -267,7 +267,7 @@ section {
     #a855f7 90%,     /* Purple body */
     #fff 100%        /* White hot tip */
   );
-  filter: drop-shadow(0 0 6px #a855f7); /* Purple glow */
+  /* filter: drop-shadow(0 0 6px #a855f7); Removed for performance */
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box, 
     linear-gradient(#fff 0 0);
@@ -387,6 +387,10 @@ nav.scrolled {
 .nav-links a:hover::after,
 .nav-links a.active::after {
   width: 100%;
+}
+
+.mobile-socials {
+  display: none;
 }
 
 /* Buttons */
@@ -684,6 +688,37 @@ footer {
   .nav-links.active a:nth-child(1) { transition-delay: 0.1s; }
   .nav-links.active a:nth-child(2) { transition-delay: 0.2s; }
   .nav-links.active a:nth-child(3) { transition-delay: 0.3s; }
+
+  /* Mobile Socials */
+  .mobile-socials {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+  }
+
+  .nav-links.active .mobile-socials {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease 0.4s, transform 0.4s var(--ease-spring) 0.4s; /* Delay after links */
+  }
+
+  .mobile-socials a {
+    font-size: 1rem; /* Reset font size for icons/text */
+    color: var(--text-muted);
+    transition: color 0.3s;
+  }
+
+  .mobile-socials a:hover {
+    color: var(--text-main);
+  }
+
+  .mobile-socials svg {
+    width: 24px;
+    height: 24px;
+  }
 
   .theme-toggle {
     display: none;
